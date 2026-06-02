@@ -70,7 +70,7 @@ p {
 /* ── TODO 6: The broken rule ────────────────────────────────
    Try to make ALL <strong> elements red.
 */
-.strong {
+strong {
   color: red;
 }
 
