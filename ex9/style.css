@@ -94,6 +94,8 @@ nav {
 
   /* TODO 5: turn .card-row into a flex container */
   display: flex;
+  flex-direction: row;
+  
 
   /* TODO 6: add space between the cards */
   gap: 2rem;
