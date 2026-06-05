@@ -27,16 +27,18 @@ formatPrice(30, "CHF")
 //         EXAMPLE: discount(100, 20) → "Price after discount: CHF 80.00"
 
 function discount(price, percent) {
-  const reduced = price - (price * percent / 100);
-  console.log(`Price after discount: CHF ${reduced.toFixed(2)}`);
+  const reducedPrice = price - (price / 100 * percent);
+  console.log(`Price after discount ${reducedPrice}`); 
 }
+/* ` backtick? dollarsign? */
+
 
 // TODO 3: call discount() with two different examples
 
 discount(30, 50)
 discount(30, 10)
-discount(80, 50)
-discount(80, 60)
+//discount(80, 50)
+//discount(80, 60)
 
 // ── Return values ────────────────────────────────────────────
 //
@@ -63,7 +65,10 @@ function formatPrice(amount, currency) {
 return`${currency} ${amount.toFixed(2)}`;
 }
 
-console.log(formatPrice(20, "CHF"));
+const myNewPrice =formatPrice(1000, "CHF") 
+console.log("myNewPrice", myNewPrice);
+
+//console.log(formatPrice(20, "CHF"));
 
 // ── Calling a function inside another function ───────────────
 //
@@ -78,6 +83,8 @@ const cart = [
   { name: 'Olive Oil', price: 8.9 },
 ];
 
+//Objects --> curly brackets, name: 'tomatoes',...
+
 // TODO 5: define a function called printCart
 //         it takes the cart array as a parameter
 //         it should loop over the items and for each one
@@ -88,9 +95,9 @@ const cart = [
 //           Bread — CHF 4.20
 //           Olive Oil — CHF 8.90
 
-function printCart(cart){
-    for (let i = 0; i < cart.length; i++){
-        const item = cart [i]
+function printCart(cartItems){
+    for (let i = 0; i < cartItems.length; i++){
+        const item = cartItems [i]
     const formattedPrice = formatPrice(item.price, "CHF");
      console.log(`${item.name} - ${formattedPrice}`);
     }
